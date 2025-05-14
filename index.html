@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume & Chat</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/5.22.0/gradio.js"
+></script>
+    <style>
+        body {
+            background: #0a192f;
+            color: #ccd6f6;
+            font-family: 'JetBrains Mono', 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', monospace;
+            min-height: 100vh;
+            font-size: 1.08rem;
+            letter-spacing: 0.01em;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'JetBrains Mono', 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', monospace;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+        }
+        h5, strong {
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #64ffda;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 16px rgba(100,255,218,0.12);
+        }
+        .profile-img.glowing-avatar {
+            box-shadow:
+                0 0 0 4px #112240,
+                0 0 16px 8px #64ffda,
+                0 0 32px 16px #64ffda33;
+            border: 3px solid #64ffda;
+            transition: box-shadow 0.3s;
+        }
+        .profile-img.glowing-avatar:hover {
+            box-shadow:
+                0 0 0 6px #112240,
+                0 0 32px 16px #64ffda,
+                0 0 64px 32px #64ffda55;
+        }
+        .badge {
+            font-size: 1rem;
+            padding: 0.6em 1.1em;
+            border-radius: 1.5rem;
+            margin-bottom: 0.3em;
+            font-weight: 500;
+            background: #233554;
+            color: #64ffda;
+            border: 1px solid #64ffda;
+            margin-right: 0.5em;
+            font-family: 'JetBrains Mono', 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', monospace !important;
+        }
+        .custom-sidebar, .custom-sidebar *:not(gradio-app):not(gradio-app *),
+        .custom-main, .custom-main *:not(gradio-app):not(gradio-app *) {
+            font-family: 'JetBrains Mono', 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', 'Courier New', monospace !important;
+        }
+        .custom-sidebar ul, .custom-sidebar li, .custom-main ul, .custom-main li {
+            font-size: 0.72rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-4 col-lg-3 d-none d-md-block bg-dark sidebar custom-sidebar" style="min-height:100vh;position:fixed;overflow-y:auto;background:#112240;border-right:1px solid #233554;max-height:100vh;">
+                <div class="sidebar-sticky p-4">
+                    <div class="text-center mb-4">
+                        <img src="./assets/me.png" alt="Profile" class="profile-img glowing-avatar mb-3">
+                        <h1 style="color:#64ffda;font-size:2.2rem;font-family:'JetBrains Mono','Fira Mono',monospace;font-weight:700;">John Cahill</h1>
+                        <h2 style="color:#ccd6f6;font-size:1.2rem;font-family:'JetBrains Mono','Fira Mono',monospace;font-weight:600;">Software Architect</h2>
+                    </div>
+                    <div class="mb-4">
+                        <h5 style="color:#64ffda;font-size:1.1rem;font-family:'JetBrains Mono','Fira Mono',monospace;font-weight:600;">Skills</h5>
+                        <div style="font-size:1rem;font-family:'JetBrains Mono','Fira Mono',monospace;color:#ccd6f6;">
+                            <strong style="color:#64ffda;">AI & Agentic Development</strong>
+                            <ul class="list-unstyled mb-2">
+                                <li>Agentic Development</li>
+                                <li>Prompt Engineering</li>
+                                <li>LLMs (OpenAI, HuggingFace, Ollama)</li>
+                                <li>LangChain, Semantic Kernel</li>
+                                <li>RAG (Retrieval Augmented Generation)</li>
+                                <li>Vector Databases (Pinecone, Chroma, Weaviate)</li>
+                                <li>Gradio, Streamlit</li>
+                                <li>AI Chatbots & Assistants</li>
+                            </ul>
+                            <strong style="color:#64ffda;">Web & App Development</strong>
+                            <ul class="list-unstyled mb-2">
+                                <li>React, React Native</li>
+                                <li>Typescript, Node.js</li>
+                                <li>HTML, Knockout</li>
+                                <li>iOS, Android</li>
+                                <li>.NET Core, ASP.NET, WEB API</li>
+                                <li>SignalR, ODATA, ASMX, WCF</li>
+                                <li>SharePoint, WPF, SilverLight, PRISM</li>
+                            </ul>
+                            <strong style="color:#64ffda;">Cloud & DevOps</strong>
+                            <ul class="list-unstyled mb-2">
+                                <li>AWS, OpenShift, Docker</li>
+                                <li>Cloud Architecture, DevOps Practices</li>
+                            </ul>
+                            <strong style="color:#64ffda;">Programming Languages</strong>
+                            <ul class="list-unstyled mb-2">
+                                <li>C#, C/C++, Python, Java, VB, Pascal, BASIC</li>
+                            </ul>
+                            <strong style="color:#64ffda;">Data & Backend</strong>
+                            <ul class="list-unstyled mb-2">
+                                <li>Entity Framework (all versions), LLBLGen Pro, Dapper, ADO.NET</li>
+                                <li>MSSQL Server (all versions), PostgreSQL, MySQL, ORACLE</li>
+                                <li>SSIS, SSRS, MDX</li>
+                            </ul>
+                            <strong style="color:#64ffda;">IDEs & Platforms</strong>
+                            <ul class="list-unstyled mb-2">
+                                <li>Visual Studio (all versions), VS Code, Cursor</li>
+                                <li>Borland, Eclipse</li>
+                                <li>Arduino</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <main class="col-md-8 col-lg-9 ms-sm-auto px-4 custom-main" style="margin-left:25%;min-height:100vh;">
+                <div class="profile-header pt-4 pb-2">
+                    <h1 style="color:#64ffda;font-size:2.4rem;font-family:'JetBrains Mono','Fira Mono',monospace;font-weight:700;">Hey there!</h1>
+                    <p style="color:#8892b0;font-size:1rem;font-family:'JetBrains Mono','Fira Mono',monospace;">
+                        Welcome to my professional portfolio. Here, you'll discover my journey and achievements in technology and software development.
+                        Feel free to explore and engage with my AI powered chatbot to learn more about my skills and contributions to the tech world. Thank you for stopping by!
+                    </p>
+                </div>
+                <div class="chat-section mb-5">
+                    <h4 class="mb-3" style="color:#64ffda;font-family:'JetBrains Mono','Fira Mono',monospace;font-weight:600;">Chat with Me</h4>
+                    <gradio-app src="https://johnmcp29-profile-conversations.hf.space"></gradio-app>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
