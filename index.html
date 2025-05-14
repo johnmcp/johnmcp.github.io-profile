@@ -77,12 +77,147 @@
         .custom-sidebar ul, .custom-sidebar li, .custom-main ul, .custom-main li {
             font-size: 0.72rem;
         }
+        @media (max-width: 991.98px) {
+            .custom-sidebar {
+                position: static !important;
+                min-height: auto !important;
+                max-height: none !important;
+                width: 100% !important;
+                border-right: none !important;
+                border-bottom: 1px solid #233554 !important;
+                background: #112240 !important;
+                z-index: 1000;
+            }
+            .sidebar-sticky {
+                padding: 1.2rem 0.7rem !important;
+            }
+            .custom-main {
+                margin-left: 0 !important;
+                padding-left: 0.7rem !important;
+                padding-right: 0.7rem !important;
+                width: 100% !important;
+            }
+            .profile-header h1 {
+                font-size: 1.3rem !important;
+            }
+            .profile-header h2 {
+                font-size: 1rem !important;
+            }
+            .profile-img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            .chat-section, .sidebar-sticky, .resume-section {
+                padding: 1.1rem 0.7rem !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .container-fluid, .row {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .custom-sidebar {
+                border-bottom: 1px solid #233554 !important;
+                border-right: none !important;
+                width: 100% !important;
+                min-height: auto !important;
+                max-height: none !important;
+                position: static !important;
+            }
+            .custom-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            .profile-header h1 {
+                font-size: 1.1rem !important;
+            }
+            .profile-header h2 {
+                font-size: 0.9rem !important;
+            }
+            .profile-img {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            .chat-section, .sidebar-sticky, .resume-section {
+                padding: 0.7rem 0.3rem !important;
+            }
+        }
+        /* --- Layout Fixes --- */
+        .custom-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+            background: #112240;
+            border-right: 1px solid #233554;
+            z-index: 1050;
+            transition: all 0.2s;
+        }
+        .custom-main {
+            margin-left: 400px;
+            width: calc(100% - 400px);
+            min-height: 100vh;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            transition: all 0.2s;
+        }
+        @media (min-width: 992px) {
+            .custom-sidebar {
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                width: 400px !important;
+                min-height: 100vh !important;
+                max-height: 100vh !important;
+                border-right: 1px solid #233554 !important;
+                border-bottom: none !important;
+                background: #112240 !important;
+                z-index: 1050;
+                overflow-y: auto;
+            }
+            .custom-main {
+                margin-left: 400px !important;
+                width: calc(100% - 400px) !important;
+                padding-left: 2.5rem !important;
+                padding-right: 2.5rem !important;
+            }
+        }
+        @media (max-width: 991.98px) {
+            .custom-sidebar {
+                position: static !important;
+                width: 100% !important;
+                min-height: auto !important;
+                max-height: none !important;
+                border-right: none !important;
+                border-bottom: 1px solid #233554 !important;
+            }
+            .custom-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                padding-left: 0.7rem !important;
+                padding-right: 0.7rem !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .custom-main {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+        }
+        /* Remove Bootstrap grid classes from nav/main */
+        nav.custom-sidebar[class*="col-"] { all: unset; }
+        main.custom-main[class*="col-"] { all: unset; }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-4 col-lg-3 d-none d-md-block bg-dark sidebar custom-sidebar" style="min-height:100vh;position:fixed;overflow-y:auto;background:#112240;border-right:1px solid #233554;max-height:100vh;">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <nav class="custom-sidebar">
                 <div class="sidebar-sticky p-4">
                     <div class="text-center mb-4">
                         <img src="./assets/me.png" alt="Profile" class="profile-img glowing-avatar mb-3">
@@ -138,7 +273,7 @@
                     </div>
                 </div>
             </nav>
-            <main class="col-md-8 col-lg-9 ms-sm-auto px-4 custom-main" style="margin-left:25%;min-height:100vh;">
+            <main class="custom-main">
                 <div class="profile-header pt-4 pb-2">
                     <h1 style="color:#64ffda;font-size:2.4rem;font-family:'JetBrains Mono','Fira Mono',monospace;font-weight:700;">Hey there!</h1>
                     <p style="color:#8892b0;font-size:1rem;font-family:'JetBrains Mono','Fira Mono',monospace;">
